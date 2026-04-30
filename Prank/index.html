@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Recharge Offer 🎁</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --blue: #1a73e8;
+  --blue-dark: #0d5fcb;
+  --green: #00c853;
+  --red: #e53935;
+  --bg: #eef3fc;
+  --card: #ffffff;
+  --text: #1e1e2e;
+  --muted: #7a8399;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── HEADER ── */
+.header {
+  background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+  color: white;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 20px rgba(26,115,232,0.35);
+  position: relative;
+  overflow: hidden;
+}
+.header::after {
+  content: '';
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+}
+.header-icon { font-size: 28px; }
+.header-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+.header-sub { font-size: 12px; opacity: 0.8; margin-top: -3px; }
+
+/* ── MAIN CARD ── */
+.wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 30px 24px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 8px 40px rgba(26,115,232,0.12);
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(30px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* promo banner */
+.promo-banner {
+  background: linear-gradient(120deg,#e3f2fd,#bbdefb);
+  border: 1.5px dashed #1a73e8;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.promo-icon { font-size: 32px; flex-shrink: 0; }
+.promo-text strong {
+  display: block;
+  font-size: 15px;
+  color: #0d47a1;
+  font-weight: 900;
+}
+.promo-text span { font-size: 12px; color: #1565c0; }
+
+/* step label */
+.step-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+h3.section-title {
+  font-family: 'Baloo 2', cursive;
+  font-size: 20px;
+  color: var(--text);
+  margin-bottom: 18px;
+}
+
+/* inputs */
+.input-group { position: relative; margin-bottom: 14px; }
+.input-group .icon {
+  position: absolute;
+  left: 14px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  pointer-events: none;
+}
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 14px 14px 14px 44px;
+  border: 2px solid #dde3f0;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: 'Nunito', sans-serif;
+  color: var(--text);
+  background: #f8faff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+}
+.input-group input:focus,
+.input-group select:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(26,115,232,0.12);
+  background: white;
+}
+
+/* operator chips */
+.operator-chips {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.chip {
+  padding: 7px 14px;
+  border-radius: 50px;
+  border: 2px solid #dde3f0;
+  background: #f8faff;
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+.chip:hover, .chip.active {
+  border-color: var(--blue);
+  background: #e8f0fe;
+  color: var(--blue);
+}
+
+/* primary button */
+.btn-primary {
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(135deg, #1a73e8, #0d47a1);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 20px rgba(26,115,232,0.4);
+  transition: transform 0.15s, box-shadow 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(26,115,232,0.45); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-green {
+  background: linear-gradient(135deg, #00c853, #00897b);
+  box-shadow: 0 6px 20px rgba(0,200,83,0.4);
+}
+.btn-green:hover { box-shadow: 0 10px 28px rgba(0,200,83,0.45); }
+
+/* offer card */
+#offer-section {
+  display: none;
+  animation: fadeUp 0.4s ease both;
+}
+.offer-card {
+  background: linear-gradient(135deg, #fff8e1, #fff3cd);
+  border: 2px solid #ffc107;
+  border-radius: 16px;
+  padding: 18px;
+  margin: 18px 0;
+  text-align: center;
+}
+.offer-card .offer-emoji { font-size: 40px; margin-bottom: 8px; }
+.offer-card h4 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 19px;
+  color: #e65100;
+  margin-bottom: 4px;
+}
+.offer-card p { font-size: 13px; color: #795548; }
+.offer-timer {
+  display: inline-block;
+  background: #ff6f00;
+  color: white;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 50px;
+  margin-top: 8px;
+  animation: pulse 1s ease infinite;
+}
+@keyframes pulse {
+  0%,100%{ transform:scale(1); }
+  50%{ transform:scale(1.05); }
+}
+
+/* success section */
+#success-section {
+  display: none;
+  animation: fadeUp 0.4s ease both;
+}
+.success-box {
+  background: #f1fff7;
+  border: 2px solid #00c853;
+  border-radius: 16px;
+  padding: 18px;
+  text-align: center;
+  margin: 18px 0;
+}
+.success-box .tick { font-size: 48px; margin-bottom: 8px; }
+.success-box h4 {
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px;
+  color: #1b5e20;
+  margin-bottom: 4px;
+}
+.success-box p { font-size: 13px; color: #388e3c; }
+
+/* ── LOADING OVERLAY ── */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.97);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  gap: 20px;
+}
+.spinner {
+  width: 62px; height: 62px;
+  border-radius: 50%;
+  border: 5px solid #e0e7ff;
+  border-top-color: var(--blue);
+  animation: spin 0.9s linear infinite;
+}
+@keyframes spin { to { transform:rotate(360deg); } }
+.loading-text {
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px;
+  color: #0d47a1;
+  text-align: center;
+  max-width: 260px;
+  line-height: 1.5;
+}
+.loading-steps { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.loading-step {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13px; color: #444;
+  opacity: 0;
+  animation: slideIn 0.5s ease forwards;
+}
+.loading-step .dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  flex-shrink: 0;
+}
+.loading-step.done .dot { background: var(--green); }
+.loading-step.done { color: var(--green); font-weight: 700; }
+@keyframes slideIn {
+  from { opacity:0; transform:translateX(-15px); }
+  to   { opacity:1; transform:translateX(0); }
+}
+
+/* ── PRANK FINAL ── */
+#prank {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  background: #0a0a0a;
+  text-align: center;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* confetti blobs */
+#prank::before, #prank::after {
+  content:'';
+  position:absolute;
+  border-radius:50%;
+  filter:blur(60px);
+  opacity:0.18;
+}
+#prank::before {
+  width:300px;height:300px;
+  background:#ff1744;
+  top:-60px;left:-60px;
+  animation: blob1 5s ease-in-out infinite alternate;
+}
+#prank::after {
+  width:250px;height:250px;
+  background:#ffd600;
+  bottom:-60px;right:-60px;
+  animation: blob1 6s ease-in-out infinite alternate-reverse;
+}
+@keyframes blob1 { to { transform:translate(30px,30px) scale(1.1); } }
+
+.prank-laugh {
+  font-size: clamp(50px,15vw,90px);
+  animation: bounceIn 0.7s cubic-bezier(.36,.07,.19,.97) both;
+  position:relative; z-index:1;
+}
+@keyframes bounceIn {
+  0%   { transform:scale(0) rotate(-20deg); opacity:0; }
+  60%  { transform:scale(1.2) rotate(5deg); }
+  100% { transform:scale(1) rotate(0); opacity:1; }
+}
+
+.prank-img {
+  width: min(78vw, 320px);
+  border-radius: 22px;
+  box-shadow: 0 0 60px rgba(255,50,50,0.5);
+  margin: 20px 0;
+  position: relative; z-index:1;
+  animation: zoomPop 1s 0.3s cubic-bezier(.36,.07,.19,.97) both;
+  border: 4px solid #ff1744;
+}
+@keyframes zoomPop {
+  0%   { transform:scale(0.2) rotate(-8deg); opacity:0; }
+  70%  { transform:scale(1.06) rotate(2deg); opacity:1; }
+  100% { transform:scale(1) rotate(0); opacity:1; }
+}
+
+.prank-msg {
+  font-family: 'Baloo 2', cursive;
+  font-size: clamp(20px,6vw,38px);
+  font-weight: 800;
+  color: #ff1744;
+  line-height: 1.3;
+  position: relative; z-index:1;
+  text-shadow: 0 2px 20px rgba(255,23,68,0.5);
+  animation: fadeUp 0.8s 0.6s ease both;
+}
+.prank-sub {
+  font-size: clamp(13px, 3.5vw, 17px);
+  color: #aaa;
+  margin-top: 10px;
+  position: relative; z-index:1;
+  animation: fadeUp 0.8s 0.9s ease both;
+}
+
+.btn-retry {
+  margin-top: 24px;
+  padding: 13px 34px;
+  background: #ff1744;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 800;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(255,23,68,0.45);
+  position: relative; z-index:1;
+  animation: fadeUp 0.8s 1.1s ease both;
+  transition: transform 0.15s;
+}
+.btn-retry:hover { transform: scale(1.05); }
+
+/* floating emojis */
+.floaters { position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+.floater {
+  position:absolute;
+  font-size: clamp(18px,5vw,32px);
+  animation: floatUp linear infinite;
+  opacity:0;
+}
+@keyframes floatUp {
+  0%  { opacity:0; transform:translateY(0) scale(0.8); }
+  10% { opacity:1; }
+  90% { opacity:1; }
+  100%{ opacity:0; transform:translateY(-90vh) scale(1.3) rotate(30deg); }
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-icon">📱</div>
+  <div>
+    <div class="header-title">QuickRecharge</div>
+    <div class="header-sub">Fast &amp; Secure Mobile Top-up</div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<div class="wrap">
+<div class="card">
+
+  <!-- promo -->
+  <div class="promo-banner">
+    <div class="promo-icon">🎁</div>
+    <div class="promo-text">
+      <strong>FREE 5GB Data — Today Only!</strong>
+      <span>Limited offer for new &amp; existing users. Claim before it expires!</span>
+    </div>
+  </div>
+
+  <!-- form -->
+  <div id="form-section">
+    <div class="step-label">Step 1 of 2</div>
+    <h3 class="section-title">Enter Your Details</h3>
+
+    <div class="input-group">
+      <span class="icon">📞</span>
+      <input type="tel" id="mobile" maxlength="10" placeholder="10-digit mobile number">
+    </div>
+
+    <div class="step-label" style="margin-bottom:8px;">Choose Operator</div>
+    <div class="operator-chips">
+      <div class="chip" onclick="selectOp(this)">🔵 Jio</div>
+      <div class="chip" onclick="selectOp(this)">🔴 Airtel</div>
+      <div class="chip" onclick="selectOp(this)">🟢 BSNL</div>
+      <div class="chip" onclick="selectOp(this)">🟣 Vi</div>
+    </div>
+
+    <button class="btn-primary" onclick="showOffer()">
+      <span>Check Offer</span> <span>→</span>
+    </button>
+  </div>
+
+  <!-- offer -->
+  <div id="offer-section">
+    <div class="step-label">Step 2 of 2</div>
+    <h3 class="section-title">🎉 Offer Found!</h3>
+    <div class="offer-card">
+      <div class="offer-emoji">📶</div>
+      <h4>FREE 5GB Data Activated!</h4>
+      <p>Exclusively for your number. Tap below to claim instantly.</p>
+      <span class="offer-timer">⏱ Offer expires in 4:59</span>
+    </div>
+    <button class="btn-primary btn-green" onclick="startProcess()">
+      <span>🚀 Claim Free Data Now</span>
+    </button>
+  </div>
+
+  <!-- success -->
+  <div id="success-section">
+    <div class="success-box">
+      <div class="tick">✅</div>
+      <h4>5GB Data Recharged!</h4>
+      <p>Your data will be active within 2 minutes. Check your history below.</p>
+    </div>
+    <button class="btn-primary" onclick="showPrank()" style="margin-top:6px;">
+      <span>📋 View Recharge History</span>
+    </button>
+  </div>
+
+</div>
+</div>
+
+<!-- LOADING -->
+<div id="loading">
+  <div class="spinner"></div>
+  <div class="loading-text">Processing your FREE 5GB Data... 📡</div>
+  <div class="loading-steps" id="loadingSteps">
+    <div class="loading-step" style="animation-delay:0.5s" id="ls1"><div class="dot"></div> Verifying mobile number...</div>
+    <div class="loading-step" style="animation-delay:1.4s" id="ls2"><div class="dot"></div> Contacting operator servers...</div>
+    <div class="loading-step" style="animation-delay:2.4s" id="ls3"><div class="dot"></div> Applying 5GB data pack...</div>
+    <div class="loading-step" style="animation-delay:3.4s" id="ls4"><div class="dot"></div> Finalizing your recharge...</div>
+  </div>
+</div>
+
+<!-- PRANK FINAL -->
+<div id="prank">
+  <div class="floaters" id="floaters"></div>
+  <div class="prank-laugh">😂🤣😂</div>
+  <img class="prank-img" src="images.webp" alt="Prank">
+  <div class="prank-msg">5GB venumna poi<br>kasu kuduthu vangu! 💸</div>
+  <div class="prank-sub">Nee seekiram fool aaitey da machaa 🙈</div>
+  <button class="btn-retry" onclick="restart()">🔄 Try Again (same result 😂)</button>
+</div>
+
+<script>
+let selectedOp = null;
+let timerInterval = null;
+
+function selectOp(el) {
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+  selectedOp = el.textContent;
+}
+
+function showOffer() {
+  const mobile = document.getElementById('mobile').value.trim();
+  if (mobile.length < 10) {
+    shake(document.querySelector('#mobile'));
+    return;
+  }
+  document.getElementById('form-section').style.display = 'none';
+  const os = document.getElementById('offer-section');
+  os.style.display = 'block';
+  startCountdown();
+}
+
+function startCountdown() {
+  let secs = 299;
+  timerInterval = setInterval(() => {
+    secs--;
+    const m = String(Math.floor(secs/60)).padStart(1,'0');
+    const s = String(secs%60).padStart(2,'0');
+    const el = document.querySelector('.offer-timer');
+    if (el) el.textContent = `⏱ Offer expires in ${m}:${s}`;
+    if (secs <= 0) clearInterval(timerInterval);
+  }, 1000);
+}
+
+function startProcess() {
+  clearInterval(timerInterval);
+  document.getElementById('offer-section').style.display = 'none';
+
+  const loading = document.getElementById('loading');
+  loading.style.display = 'flex';
+
+  const steps = ['ls1','ls2','ls3','ls4'];
+  steps.forEach((id, i) => {
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      el.classList.add('done');
+      el.querySelector('.dot').textContent = '✔';
+    }, (i+1) * 1000 + 500);
+  });
+
+  setTimeout(() => {
+    loading.style.display = 'none';
+    const ss = document.getElementById('success-section');
+    ss.style.display = 'block';
+  }, 5200);
+}
+
+function showPrank() {
+  document.getElementById('prank').style.display = 'flex';
+  spawnFloaters();
+}
+
+function restart() {
+  document.getElementById('prank').style.display = 'none';
+  document.getElementById('success-section').style.display = 'none';
+  document.getElementById('form-section').style.display = 'block';
+  document.getElementById('mobile').value = '';
+  document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.loading-step').forEach(el => {
+    el.classList.remove('done');
+    el.querySelector('.dot').textContent = '';
+  });
+  document.getElementById('floaters').innerHTML = '';
+}
+
+function shake(el) {
+  el.style.animation = 'none';
+  el.style.borderColor = '#e53935';
+  el.style.boxShadow = '0 0 0 4px rgba(229,57,53,0.2)';
+  let x = 0, t = setInterval(()=>{
+    el.style.transform = `translateX(${Math.sin(x++)*8}px)`;
+    if(x>10){ clearInterval(t); el.style.transform=''; setTimeout(()=>{ el.style.borderColor=''; el.style.boxShadow=''; },600); }
+  },40);
+}
+
+function spawnFloaters() {
+  const emojis = ['😂','🤣','💀','💸','🙈','😹','🎭','😵','🔥','💔'];
+  const wrap = document.getElementById('floaters');
+  wrap.innerHTML = '';
+  for (let i = 0; i < 18; i++) {
+    const el = document.createElement('div');
+    el.className = 'floater';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random()*95 + 'vw';
+    el.style.bottom = '-60px';
+    el.style.animationDuration = (4 + Math.random()*6) + 's';
+    el.style.animationDelay = (Math.random()*4) + 's';
+    wrap.appendChild(el);
+  }
+}
+</script>
+</body>
+</html>
